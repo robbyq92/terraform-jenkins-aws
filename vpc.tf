@@ -34,7 +34,7 @@ resource "aws_route_table_association" "ap-northeast-2a-public" {
   route_table_id = aws_route_table.ap-northeast-2a-public.id
 }
 
-resource "aws_route_table" "ap-northeast-2a-private" {
+resource "aws_route_table" "ap-northeast-2b-private" {
   vpc_id = aws_vpc.main_vpc.id
 
   route {
@@ -47,9 +47,9 @@ resource "aws_route_table" "ap-northeast-2a-private" {
   }
 }
 
-resource "aws_route_table_association" "ap-northeast-2a-private" {
-  subnet_id      = aws_subnet.ap-northeast-2a-private.id
-  route_table_id = aws_route_table.ap-northeast-2a-private.id
+resource "aws_route_table_association" "ap-northeast-2b-private" {
+  subnet_id      = aws_subnet.ap-northeast-2b-private.id
+  route_table_id = aws_route_table.ap-northeast-2b-private.id
 }
 
 resource "aws_subnet" "ap-northeast-2a-public" {
@@ -63,11 +63,11 @@ resource "aws_subnet" "ap-northeast-2a-public" {
   }
 }
 
-resource "aws_subnet" "ap-northeast-2a-private" {
+resource "aws_subnet" "ap-northeast-2b-private" {
   vpc_id = aws_vpc.main_vpc.id
 
   cidr_block        = var.private_subnet_cidr
-  availability_zone = "ap-northeast-2a"
+  availability_zone = "ap-northeast-2b"
 
   tags = {
     Name = "Private Subnet"
