@@ -1,5 +1,5 @@
 resource "aws_security_group" "nat" {
-  name        = "vpc_nat"
+  name        = "vpc_nat_rcm"
   description = "Puede acceder a las dos subredes"
 
   ingress {
@@ -67,7 +67,7 @@ resource "aws_security_group" "nat" {
 }
 
 resource "aws_security_group" "web" {
-  name        = "vpc_web"
+  name        = "vpc_web_rcm"
   description = "Permitir las conexiones entrantes HTTP."
 
 ingress {
@@ -118,7 +118,7 @@ ingress {
 }
 
 resource "aws_security_group" "db" {
-  name        = "vpc_db"
+  name        = "vpc_db_rcm"
   description = "Permitir las conexiones a la base de datos."
 
   ingress {
