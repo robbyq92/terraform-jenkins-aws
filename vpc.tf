@@ -52,7 +52,7 @@ resource "aws_route_table_association" "ap-northeast-2a-private" {
   route_table_id = aws_route_table.ap-northeast-2a-private.id
 }
 
-resource "aws_subnet" "eu-west-1a-public" {
+resource "aws_subnet" "ap-northeast-2a-public" {
   vpc_id = aws_vpc.main_vpc.id
 
   cidr_block        = var.public_subnet_cidr
