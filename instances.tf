@@ -1,6 +1,6 @@
 resource "aws_instance" "nat" {
-  ami                         = "ami-0ba1c3ef9156479a2"
-  availability_zone           = "eu-west-1a"
+  ami                         = "ami-0e92198843e11ccee"
+  availability_zone           = "ap-northeast-2"
   instance_type               = "t2.micro"
   key_name                    = var.aws_key_name
   vpc_security_group_ids      = [aws_security_group.nat.id]
@@ -15,7 +15,7 @@ resource "aws_instance" "nat" {
 
 resource "aws_instance" "web-1" {
   ami                         = var.amis[var.aws_region]
-  availability_zone           = "eu-west-1a"
+  availability_zone           = "ap-northeast-2"
   instance_type               = "t2.micro"
   key_name                    = var.aws_key_name
   vpc_security_group_ids      = [aws_security_group.web.id]
@@ -30,7 +30,7 @@ resource "aws_instance" "web-1" {
 
 resource "aws_instance" "db-1" {
   ami                    = var.amis[var.aws_region]
-  availability_zone      = "eu-west-1a"
+  availability_zone      = "ap-northeast-2"
   instance_type          = "t2.micro"
   key_name               = var.aws_key_name
   vpc_security_group_ids = [aws_security_group.db.id]
