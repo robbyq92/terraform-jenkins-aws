@@ -1,20 +1,20 @@
 variable "aws_key_path" {
-  default = "/home/usuario/psepulveda-ireland.pem"
+  default = "/home/usuario/RCM-Seul.pem"
 }
 
 variable "aws_key_name" {
-  default = "psepulveda-ireland"
+  default = "RCM-Seul"
 }
 
 variable "aws_region" {
   description = "Región EC2 para la VPC"
-  default     = "eu-west-1"
+  default     = "ap-northeast-2"
 }
 
 variable "amis" {
   description = "AMIs por region"
   default = {
-    eu-west-1 = "ami-0ba1c3ef9156479a2"
+    eu-west-1 = "ami-0e92198843e11ccee"
   }
 }
 
